@@ -1,6 +1,8 @@
 body {
-    background-color: black;
+    margin: 0;
+    background:url("../images/stars.jpg");
     color: yellow;
+    font-family: Helvetica, sans-serif;
 }
 
 #title {
@@ -11,23 +13,28 @@ body {
 }
 
 #game-area {
-    max-width: 960px;
+    max-width: 1280px;
     height: 100vh;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
     position: relative;
-    background: url("../images/kotor.jpg") no-repeat;
-    background-size: contain;
-    background-position: center;
+    background: url("../images/kotorColor.jpg") no-repeat;
+    background-size: 100%;
+    background-position: fill;
 }
 
-#player-select {
+#player-select, #enemy-select, #attacker-area, #defender-area {
     width: 100%;
     top: 25%;
     position: absolute;
     text-align: center;
     background-color: transparent;
+}
+
+#attacker-area, #defender-area {
+    position: initial;
+    display: inline;
 }
 
 .character {
@@ -36,6 +43,18 @@ body {
 
 }
 
-.character:hover {
+.character:not(.no-border):hover {
     border: 2px solid green;
+}
+
+.character.enemy {
+    width: 32%;
+}
+
+.character.enemy:not(.no-border):hover {
+    border: 2px solid red;
+}
+
+.character.no-border {
+    width: 49%;
 }
